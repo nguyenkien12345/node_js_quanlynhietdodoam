@@ -8,10 +8,10 @@ const DataController = {
 
         const { temperature, humidity, dust, air } = req.body;
 
-        if (!temperature) return res.status(400).json(validateData('Vui lòng nhập temperature'));
-        if (!humidity) return res.status(400).json(validateData('Vui lòng nhập humidity'));
-        if (isNaN(temperature)) return res.status(400).json(validateData('temperature phải là số'));
-        if (isNaN(humidity)) return res.status(400).json(validateData('humidity phải là số'));
+        if (!temperature) return res.status(400).json(validateData('Please enter temperature'));
+        if (!humidity) return res.status(400).json(validateData('Please enter humidity'));
+        if (isNaN(temperature)) return res.status(400).json(validateData('temperature must be number'));
+        if (isNaN(humidity)) return res.status(400).json(validateData('humidity must be number'));
 
         const date = moment().add(7, 'hours').format('DD/MM/YYYY');
         const time = moment().add(7, 'hours').format('HH:mm:ss');
@@ -72,12 +72,12 @@ const DataController = {
 
         const { temperature, humidity, dust, air, id } = req.body;
 
-        if (!id) return res.status(400).json(validateData('Vui lòng nhập id'));
-        if (!temperature) return res.status(400).json(validateData('Vui lòng nhập temperature'));
-        if (!humidity) return res.status(400).json(validateData('Vui lòng nhập humidity'));
+        if (!id) return res.status(400).json(validateData('Please enter id'));
+        if (!temperature) return res.status(400).json(validateData('Please enter temperature'));
+        if (!humidity) return res.status(400).json(validateData('Please enter humidity'));
 
-        if (isNaN(temperature)) return res.status(400).json(validateData('temperature phải là số'));
-        if (isNaN(humidity)) return res.status(400).json(validateData('humidity phải là số'));
+        if (isNaN(temperature)) return res.status(400).json(validateData('temperature must be number'));
+        if (isNaN(humidity)) return res.status(400).json(validateData('humidity must be number'));
 
         const date = moment().add(7, 'hours').format('DD/MM/YYYY');
         const time = moment().add(7, 'hours').format('HH:mm:ss');
